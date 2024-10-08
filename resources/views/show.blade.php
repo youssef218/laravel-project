@@ -23,6 +23,7 @@
                 <p class="card-text">
                     <small class="text-muted">Profile ID: {{ $profile->id }}</small>
                 </p>
+                
                 <a href="{{ route('homepage') }}" class="btn btn-primary">Back to Profiles</a>
             </div>
         </div>
