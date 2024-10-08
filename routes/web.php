@@ -1,13 +1,10 @@
 <?php
 
+use App\Http\Controllers\homeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
-Route::get('/', ['\App\Http\Controllers\homeController' , 'index']);
-
-Route::get('/ff/{ff}', function (Request $request) {
-    $ff = $request->ff;
-    return view('welcomee', [
-        'ff'=> $ff
-    ]);
-});
+Route::get('/', [homeController::class , 'index'])->name('homepage');
+Route::get('/{id}', [homeController::class , 'show'])
+->where('id', '\d+') // This ensures that only numeric values are accepted
+->name('homepage.show');
